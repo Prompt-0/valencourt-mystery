@@ -1,0 +1,183 @@
+/* Valencourt Enigma - Gothic Noir Design Tokens & Master Theme */
+
+:root {
+  --bg-dark: #0b0c10;
+  --bg-surface: #14161d;
+  --bg-card: #1c1f2a;
+  --bg-parchment: #f4ecd8;
+  --bg-parchment-dark: #23201a;
+  
+  --gold-primary: #d4af37;
+  --gold-light: #f3e5ab;
+  --gold-dark: #997d24;
+  --gold-glow: rgba(212, 175, 55, 0.25);
+  
+  --crimson-accent: #8b1e1e;
+  --crimson-glow: rgba(139, 30, 30, 0.35);
+  --emerald-accent: #1e5a3e;
+  --amber-candle: #ffb347;
+  
+  --text-main: #e6e6e6;
+  --text-muted: #9ba1b0;
+  --text-gold: #e2c068;
+  --text-dark: #1a1714;
+  
+  --border-gold: rgba(212, 175, 55, 0.35);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  
+  --font-serif-display: 'Cinzel Decorative', 'Cinzel', Georgia, serif;
+  --font-serif: 'Cinzel', Georgia, serif;
+  --font-body-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  
+  --shadow-deep: 0 16px 36px rgba(0, 0, 0, 0.85);
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-body-serif);
+  font-size: 18px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Gothic Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f1015;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2e3d;
+  border-radius: 4px;
+  border: 1px solid var(--border-gold);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dark);
+}
+
+/* Button & Interactive Resets */
+button {
+  font-family: var(--font-serif);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.gothic-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: linear-gradient(180deg, #242936 0%, #151821 100%);
+  color: var(--gold-light);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.gothic-btn:hover {
+  background: linear-gradient(180deg, #32394c 0%, #1e2330 100%);
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 15px var(--gold-glow);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.gothic-btn:active {
+  transform: translateY(0);
+}
+
+.gothic-btn-danger {
+  background: linear-gradient(180deg, #8b1e1e 0%, #4a0d0d 100%);
+  border-color: #d14d4d;
+  color: #fff;
+}
+
+.gothic-btn-danger:hover {
+  background: linear-gradient(180deg, #a62424 0%, #5e1111 100%);
+  box-shadow: 0 0 18px var(--crimson-glow);
+  border-color: #ff6b6b;
+}
+
+.gothic-btn-gold {
+  background: linear-gradient(180deg, #d4af37 0%, #997d24 100%);
+  border-color: #ffe082;
+  color: #0b0c10;
+  font-weight: 700;
+}
+
+.gothic-btn-gold:hover {
+  background: linear-gradient(180deg, #e6c34e 0%, #b3922d 100%);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+  color: #000;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 5, 8, 0.88);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Ornate Gothic Frame Box */
+.ornate-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-gold);
+  box-shadow: var(--shadow-deep), 0 0 0 1px rgba(0, 0, 0, 0.9);
+  position: relative;
+}
+
+.ornate-box::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  pointer-events: none;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, .serif-heading {
+  font-family: var(--font-serif);
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: var(--gold-light);
+}
+
+.decorative-title {
+  font-family: var(--font-serif-display);
+  letter-spacing: 2px;
+}
